@@ -1,13 +1,23 @@
 
+window.onload = function () {
+    Particles.init({
+        selector: ".particles",
+        sizeVariations: 3,
+        color: "#ffffff",
+        connectParticles: true,
+        maxParticles: 120,
+        minDistance: 150,
+        speed: 1
+    });
+};
+
+
 function stickyNav() {
     window.onscroll = function() { 
-        let navbar = $("#navbar")[0];
-        let sticky = navbar.offsetTop;
-
-        if (window.pageYOffset >= sticky) {
-            $("#navbar").addClass("sticky");
+        if (window.pageYOffset > 575) {
+            $("#navbar").addClass("scroll");
         } else {
-            $("#navbar").removeClass("sticky");
+            $("#navbar").removeClass("scroll");
         }
     }
 }

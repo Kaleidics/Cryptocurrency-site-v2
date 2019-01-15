@@ -6,9 +6,6 @@ body {
     margin: 0;
 }
 
-main {
-    margin: 0 8px 0 8px;
-}
 /*clearfix*/
 .clearfix::after {
     content: "";
@@ -17,21 +14,42 @@ main {
 }
 
 #navbar {
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0;
-    background-color: grey;
-}
-
-#navbar li {
-    display: inline-block;
-    list-style-type: none;
-    padding: 14px;
-    
-    background-color: green;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+.no-scroll {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.scroll {
+    background-color: green;
+}
+
+#navbar li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 14px;
+}
+
+#navbar li a {
+    text-decoration: none;
+}
+
+#navbar li#icon {
+    background-color: red;
+    margin-right: 20%;
+}
+
+.particles {
+    background-image: linear-gradient( 45deg, rgba(34, 57, 138, 0.8), rgba(255, 152, 78, 0.8));
+    width: 100%;
+    max-height: 600px;
 }
