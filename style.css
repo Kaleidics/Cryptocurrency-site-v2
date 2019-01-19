@@ -22,8 +22,9 @@ body {
 #navbar {
     display: flex;
     justify-content: center;
-    padding: 15px;
+    padding: 15px 0;
     margin: 0;
+    z-index: 10;
 }
 
 /* navbar fixed scroll */
@@ -72,32 +73,75 @@ body {
 .title-block {
     position: absolute;
 }
- 
-.learn1 {
+ .title-block h1 {
+     text-align: center;
+ }
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.title-btn {
+    margin: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.title-btn:hover {
+    cursor: pointer;
+    background-color: #141326;
+    /* border: 1px solid #141326; */
+    transition: 0.3s;
+}
+
+.search {
+    background-color: rgba(232, 83, 87);
+    border: 1px solid rgba(232, 83, 87);
+
+}
+
+.guidebtn {
+    background-color: rgba(232, 83, 87);
+    border: 1px solid rgba(232, 83, 87);
+}
+
+.info-block {
     background-color: white;
     color:red;
-    height: 400px;
-    opacity: 0.5;
+    height: 450px;
+    border-bottom: 1px solid black;
+    padding: 4px;
     
 }
-.learn2 {
-    background-color: red;
-    color:red;
-    height: 400px;
-    
+.guide {
+    background-color: #141326;
 }
-.learn3 {
-    background-color: blue;
-    color:red;
-    height: 400px;
-    
+section.info-block h2 {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 5%;
 }
-.learn4 {
-    background-color: yellow;
-    color:red;
-    height: 400px;
-    
+.guide-inner {
+    display: flex;
+    justify-content: space-evenly
 }
 
+.summary-inner {
+    display: flex;
+    justify-content: center;
+    width: 50%;
 
+}
+
+.description-image-container {
+    width: 100%;
+    height: auto;
+}
+
+img.description-image {
+    /* object-fit: scale-down; */
+    width: 100%;
+    height: auto;
+}
 

@@ -114,7 +114,7 @@ particlesJS("particles", {
 
 function stickyNav() {
     window.onscroll = function() { 
-        if (window.pageYOffset > 650) {
+        if (window.pageYOffset > 200) {
             $("#navbar").addClass("scroll");
         } else {
             $("#navbar").removeClass("scroll");
