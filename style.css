@@ -3,6 +3,8 @@ html {
     margin:0;
     padding: 0;
     height: 100%;
+    width: 100%;
+    font-family: 'Sarabun', sans-serif;
 }
 
 body {
@@ -39,7 +41,7 @@ body {
 }
 /* exit particle background */
 .scroll {
-    background-color: green;
+    background-color: #141326;
 }
 
 #navbar li {
@@ -54,16 +56,17 @@ body {
 }
 
 #navbar li.icon.name {
-    padding-right: 20%;
+    margin-right: 20%;
 
 }
+
 #logo{
     max-width: 50px;
 }
 
 #particles {
     width: 100%;
-    height: 670px;;
+    height: 800px;;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -72,8 +75,16 @@ body {
 
 .title-block {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
  .title-block h1 {
+     font-family: 'Open Sans', sans-serif;
+     text-align: center;
+ }
+
+ .title-block p {
      text-align: center;
  }
 .buttons {
@@ -107,20 +118,28 @@ body {
 }
 
 .info-block {
-    background-color: white;
-    color:red;
-    height: 450px;
+    background-color: rgb(227, 228, 230);
+    color:rgba(232, 83, 87);
+    height: 600px;
     border-bottom: 1px solid black;
     padding: 4px;
     
 }
+
+.info-section {
+    color: black;
+}
+
 .guide {
     background-color: #141326;
 }
-section.info-block h2 {
+.section-header {
+    color: rgba(232, 83, 87);
+    display: flex;
+    justify-content: center;
     margin: 0;
     text-align: center;
-    padding-bottom: 5%;
+    padding-bottom: 75px;
 }
 .guide-inner {
     display: flex;
@@ -130,18 +149,49 @@ section.info-block h2 {
 .summary-inner {
     display: flex;
     justify-content: center;
-    width: 50%;
-
 }
 
-.description-image-container {
-    width: 100%;
-    height: auto;
+div.description {
+    width: 75%;
 }
 
 img.description-image {
     /* object-fit: scale-down; */
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
+    float: right;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+
+}
+.description p {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
 }
 
+.guide-inner-box {
+    text-align: center;
+    width: 30%;
+    padding-left:1%;
+    padding-right: 1%;
+    background-color: #1F1E2F;
+}
+.guide-sections h2 {
+    padding-bottom: 20px;
+}
+
+.guide-sections-list {
+    padding: 0;
+    list-style: none;
+}
+
+.guide-sections-list li {
+    color: rgb(227, 228, 230);
+    border-bottom: 2px solid #3C3B4F;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
