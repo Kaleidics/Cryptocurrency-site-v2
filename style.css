@@ -204,14 +204,23 @@ p {
 }
 
 #item1 {
-    width: 50%
+    width: 40%;
+    margin-left: 8%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 #item2 {
-    width: 50%
+    width: 30%;
+    
 }
 
-
+#search-form {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 
 #item2 * {
     margin: 0;
@@ -224,5 +233,20 @@ p {
 }
 
 fieldset {
+    width: 50%;
+    display: flex;
     border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset * {
+    text-align: center;
+    width: 100%;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+
 }
