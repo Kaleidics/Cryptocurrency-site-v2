@@ -134,12 +134,14 @@ body {
     background-color: #141326;
 }
 .section-header {
-    color: rgba(232, 83, 87);
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
-    padding-bottom: 75px;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+    width: 20%;
+    border-bottom: 1px solid black;
 }
 .guide-inner {
     display: flex;
@@ -209,19 +211,18 @@ p {
     width: 50%
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 15px;
-    margin-bottom: 100px;
-    width: 20%;
-    border-bottom: 1px solid black;
-}
+
 
 #item2 * {
     margin: 0;
     padding-bottom: 15px;
     /* text-align: center; */
+}
+
+#search {
+    color: black;
+}
+
+fieldset {
+    border: 0;
 }
