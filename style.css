@@ -95,7 +95,7 @@ body {
 .title-btn {
     margin: 20px;
     padding: 15px 20px;
-    border-radius: 5px;
+    border-radius: 3px;
     color: white;
 }
 
@@ -120,7 +120,7 @@ body {
 .info-block {
     background-color: rgb(227, 228, 230);
     color:rgba(232, 83, 87);
-    height: 600px;
+    height: 500px;
     border-bottom: 1px solid black;
     padding: 4px;
     
@@ -194,4 +194,34 @@ p {
     border-bottom: 2px solid #3C3B4F;
     padding-bottom: 5px;
     margin-bottom: 10px;
+}
+
+
+#search-section {
+    display: flex;
+}
+
+#item1 {
+    width: 50%
+}
+
+#item2 {
+    width: 50%
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 100px;
+    width: 20%;
+    border-bottom: 1px solid black;
+}
+
+#item2 * {
+    margin: 0;
+    padding-bottom: 15px;
+    /* text-align: center; */
 }
