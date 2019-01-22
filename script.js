@@ -272,12 +272,10 @@ function graphf(labels, data) {
             datasets: [{
                 label: 'Hourly High Price',
                 data: data,
-                backgroundColor: [
-                    'rgba(255, 0, 0, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,0,132,1)'
-                ],
+                backgroundColor: 
+                    'rgba(255, 0, 0, 0.2)',
+                borderColor: 
+                    'rgba(255,0,132,1)',
                 borderWidth: 1
             }]
         },
