@@ -1,4 +1,155 @@
+const api_key1 = "960e428fdca399a09e41196327f5766b1f76aa979eec604f31318a4e0ac3f032";
+let dataArray;
 
+//formats parameters for urls
+function formatQueryParams(params) {
+    const queryItems = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItems.join('&');
+}
+
+function registerSearch() {
+    $("#search-form").on("submit", function(event) {
+        event.preventDefault();
+
+        let searchTerm = (($("#search-term").val()).toUpperCase()) || "BTC";
+        let searchMarket = $("#search-ex").val() || "CCCAGG";
+        let fCurrency = $("#search-xxx").val();
+        console.log(searchTerm, searchMarket, fCurrency);
+
+        $(".list-holder").empty();
+        generateResults(searchTerm, searchMarket, fCurrency);
+    });
+}
+
+
+
+
+
+
+function generateResults(search, exchange, currency) {
+
+    const searchUrl = "https://min-api.cryptocompare.com/data/all/coinlist";
+    const searchUrl2 = "https://min-api.cryptocompare.com/data/generateAvg";
+    const searchUrl3 = "https://min-api.cryptocompare.com/data/histohour";
+
+    let params = {
+        fsym: search,
+        tsym: currency,
+        e: exchange,
+        api_key: api_key1
+    }
+
+    let params2 = {
+        fsym: search,
+        tsym: currency,
+        limit: "23",
+        api_key: api_key1
+    }
+
+    const queryString = formatQueryParams(params);
+    const queryString2 = formatQueryParams(params2);
+    const url = searchUrl + "?" + api_key1;; //endpoint including only name
+    const url2 = searchUrl2 + "?" + queryString; //endpoint including statistics 
+    const url3 = searchUrl3 + "?" + queryString2; //endpoint for data graph
+
+    let response1, response2;
+
+    fetch(url)
+        .then(function (response) {
+            if (response.ok) { return response.json(); }
+            throw new Error(response.statusText);
+        })
+        .then(function (responseJSON) {
+            response1 = responseJSON;
+            return fetch(url2);
+        })
+        .then(function (response) {
+            if (response.ok) { return response.json(); }
+            throw new Error(response.statusText);
+        })
+        .then(function (responseJSON) {
+            response2 = responseJSON;
+            const { LASTMARKET, PRICE, OPEN24HOUR, HIGH24HOUR, LOW24HOUR, CHANGE24HOUR, CHANGEPCT24HOUR } = responseJSON.DISPLAY;
+
+            if (PRICE === undefined) {
+                $(".list-holder").html(`<h3>No data found</h3>`);
+            }
+
+            if (PRICE != undefined) {
+                $(".list-holder").html(`
+
+            <ul>
+                <li>${response1.Data[search].FullName}</li>
+                <li><span>Last Market:</span> <span>${LASTMARKET}<span></li>
+                <li><span>Price:</span> <span>${PRICE}</span></li>
+            </ul>
+
+            <ul>
+                <li><span>Open 24 Hour:</span> <span>${OPEN24HOUR}</span></li>
+                <li><span>High 24 Hour:</span> <span>${HIGH24HOUR}</span></li>
+                <li><span>Low 24 Hour:</span> <span>${LOW24HOUR}</span></li>
+            </ul>
+
+            <ul>
+                <li><span>Change 24 Hour:</span> <span>${CHANGE24HOUR}</span></li>
+                <li><span>Change Percent 24 Hour: </span> <span>${CHANGEPCT24HOUR}%</span></li>
+            </ul>
+            `)
+            } else {
+                $(".list-holder").html(`<h2>No Data</h2>`)
+            }
+            return fetch(url3);
+        })
+        .then(function (response) {
+            if (response.ok) { return response.json(); }
+            throw new Error(response.statusText);
+        })
+        .then(function (responseJSON) {
+            if (response2.DISPLAY.PRICE != undefined) {
+                let label = [];
+                let data = [];
+                for (let i = 0; i < responseJSON.Data.length; i++) {
+                    label.push(responseJSON.Data[i].time);
+                    data.push(responseJSON.Data[i].high);
+                }
+                let labelTime = label.map(x => new Date(x * 1000));
+                graphf(labelTime, data);
+            }
+        })
+        .catch((error) => {
+                $(".list-holder").html(`<div>There is no data for the Coin: ${search} in Market: ${exchange}</div`);
+            
+        });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Styling controls
 //particles.js config
 particlesJS("particles", {
     "particles": {
@@ -111,6 +262,41 @@ particlesJS("particles", {
     "retina_detect": true
 });
 
+//charts.js config
+function graphf(labels, data) {
+    let ctx = document.getElementById("myChart").getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Hourly High Price',
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,0,132,1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        display: false
+                    }
+                }]
+            }
+        }
+    });
+}
 
 function stickyNav() {
     window.onscroll = function() { 
@@ -124,6 +310,7 @@ function stickyNav() {
 
 function documentReady() {
     stickyNav();
+    registerSearch();
     
 }
 

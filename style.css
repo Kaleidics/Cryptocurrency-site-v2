@@ -230,6 +230,7 @@ p {
 
 #search {
     color: black;
+    height:300px;
 }
 
 fieldset {
@@ -249,4 +250,38 @@ input {
     margin: 0;
     padding: 0;
 
+}
+
+#stats {
+    background-color: #141326;
+    height: 800px;
+
+}
+
+.bottom-blue {
+    border: 0;
+}
+
+#results-ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 80px;
+}
+
+#results-ul * {
+    margin-right: 50px;
+}
+
+#results-section {
+    padding-left:10%;
+    width: 50%;
+    display: flex;
+
+}
+
+.graph-holder {
+    width: 50%;
 }

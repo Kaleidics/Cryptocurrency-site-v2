@@ -55,7 +55,7 @@
             </section>
 
             <section id="guide" class="info-block guide">
-                <h2 class="section-header">Guide</h2>
+                <h2 class="section-header bottom-blue">Guide</h2>
                 <div class="guide-inner">
                     <div class="guide-inner-box">
                         <div>
@@ -95,11 +95,11 @@
                 <form id="search-form" role="form">
                     <fieldset id="search-fieldset">
                         <label for="ticker">Ticker Symbol</label>
-                        <input type="text" name="ticker">
+                        <input id="search-term" type="text" name="ticker">
                         <label for="market">Market</label>
-                        <input type="text" name="market">
+                        <input id="search-ex" type="text" name="market">
                         <label for="exchange">Currency</label>
-                        <select name="exchange">
+                        <select id="search-xxx" name="exchange">
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                             <option value="JPY">JPY</option>
@@ -116,7 +116,25 @@
             </section>
 
 
-            <section class="info-block"></section>
+            <section id="stats" class="info-block">
+                <h2 class="section-header bottom-blue">Stats</h2>
+                        <ul id="results-ul">
+                            <li>Top Coins</li>
+                            <li>All Coins</li>
+                            <li>Markets</li>
+                            <li>Results</li>
+                        </ul>
+                    <div id="results-section">
+                        <div class="graph-holder">
+                            <canvas id="myChart" width="400" height="400"></canvas>
+
+                        </div>
+                        <div class="list-holder">
+                            hello
+                        </div>
+
+                    </div>
+            </section>
         </main>
 
 
@@ -124,7 +142,7 @@
 
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
