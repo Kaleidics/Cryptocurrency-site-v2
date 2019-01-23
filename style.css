@@ -107,18 +107,23 @@ body {
 }
 
 .search {
-    background-color: rgba(232, 83, 87);
-    border: 1px solid rgba(232, 83, 87);
+    background-color: rgb(232, 83, 87);
+    border: 1px solid rgb(232, 83, 87);
+    /* background-color: rgb(215, 125, 53); */
+    /* border: 1px solid rgb(215, 125, 53); */
 
 }
 
 .guidebtn {
-    background-color: rgba(232, 83, 87);
-    border: 1px solid rgba(232, 83, 87);
+    background-color: rgb(232, 83, 87);
+    border: 1px solid rgb(232, 83, 87); 
+    /* background-color: rgb(215, 125, 53); */
+    /* border: 1px solid rgb(215, 125, 53); */
 }
 
 .info-block {
     background-color: rgb(227, 228, 230);
+    /* color:rgba(215, 125, 53); */
     color:rgba(232, 83, 87);
     height: 500px;
     border-bottom: 1px solid black;
@@ -283,5 +288,36 @@ input {
 }
 
 .graph-holder {
-    width: 50%;
+    width: 60%;
+}
+
+.list-images {
+    width: 30px;
+}
+
+.top-coins-items {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    border: 1px solid #3C3B4F;
+    color: white;
+}
+
+.top-coins-items li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 10px;
+    cursor: pointer;
+
+}
+
+.top-coins-items:hover {
+    background-color: #3C3B4F;
+}
+
+.top-coins-items li a {
+    color: white;
+    text-decoration: none;
 }

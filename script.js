@@ -22,11 +22,6 @@ function registerSearch() {
     });
 }
 
-
-
-
-
-
 function generateResults(search, exchange, currency) {
 
     const searchUrl = "https://min-api.cryptocompare.com/data/all/coinlist";
@@ -123,6 +118,50 @@ function generateResults(search, exchange, currency) {
         });
 };
 
+function registerTopCoins() {
+    $("#top-coins").on("click", function(event) {
+        generateTopTen();
+    })
+}
+
+function generateTopTen() {
+    const searchUrl = "https://min-api.cryptocompare.com/data/top/totalvolfull";
+    const baseImageUrl = "https://www.cryptocompare.com/";
+
+    let params = {
+        limit: "10",
+        tsym: "USD",
+        api_key: api_key1
+    };
+
+    const queryString = formatQueryParams(params);
+    const url = searchUrl + "?" + queryString;
+
+    return fetch(url)
+        .then(function (response) {
+            if (response.ok) return response.json();
+            throw new Error(response.statusText);
+        })
+        .then(function (responseJson) {
+            let items = ``;
+            for (let i = 0; i < responseJson.Data.length; i++) {
+                const { Name, ImageUrl, FullName } = responseJson.Data[i].CoinInfo;
+                const { PRICE, HIGHDAY, LOWDAY } = responseJson.Data[i].DISPLAY.USD;
+
+                items = items.concat(`
+            <ul id="${Name}" class="top-coins-items">
+            <li><img class="list-images" src="${baseImageUrl}${ImageUrl}" alt="${FullName}"></li>
+            <li><a href="#">${FullName}</a></li>
+            <li>${PRICE}</li>
+            <li>${HIGHDAY}/${LOWDAY}</li>
+            </ul>`);
+            }
+
+            $(".list-holder").html("");
+            $(".list-holder").html(items);
+        })
+        .catch(error => console.log("generateTopTen failed", error));
+}
 
 
 
@@ -306,9 +345,15 @@ function stickyNav() {
     }
 }
 
+function toTop() {
+    window.scrollTo(0,0);
+}
+
 function documentReady() {
+    toTop();
     stickyNav();
     registerSearch();
+    registerTopCoins();
     
 }
 
