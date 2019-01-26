@@ -109,6 +109,7 @@ function generateResults(search, exchange, currency) {
                     data.push(responseJSON.Data[i].high);
                 }
                 let labelTime = label.map(x => new Date(x * 1000));
+                console.log("made it");
                 graphf(labelTime, data);
             }
         })
@@ -120,7 +121,8 @@ function generateResults(search, exchange, currency) {
 
 function registerTopCoins() {
     $("#top-coins").on("click", function(event) {
-        
+        $("#myChart").remove();
+        $(".graph-holder").append(`<canvas id="myChart"><canvas>`)
         generateTopTen();
     })
 }
