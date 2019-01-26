@@ -281,14 +281,14 @@ input {
 }
 
 #results-section {
-    padding-left:10%;
-    width: 50%;
+    /* padding-left:10%; */
+    /* width: 50%; */
     display: flex;
 
 }
 
 .graph-holder {
-    width: 60%;
+    width: 50%;
 }
 
 .list-images {
@@ -320,4 +320,12 @@ input {
 .top-coins-items li a {
     color: white;
     text-decoration: none;
+}
+
+#results-ul li {
+    cursor: pointer;
+}
+
+.all-coins-image {
+    width: 50px;
 }

@@ -17,7 +17,7 @@ function registerSearch() {
         let fCurrency = $("#search-xxx").val();
         console.log(searchTerm, searchMarket, fCurrency);
 
-        $(".list-holder").empty();
+        $(".list-holder").html("");
         generateResults(searchTerm, searchMarket, fCurrency);
     });
 }
@@ -120,6 +120,7 @@ function generateResults(search, exchange, currency) {
 
 function registerTopCoins() {
     $("#top-coins").on("click", function(event) {
+        
         generateTopTen();
     })
 }
@@ -163,10 +164,46 @@ function generateTopTen() {
         .catch(error => console.log("generateTopTen failed", error));
 }
 
+function registerAllCoins() {
+    $("#all-coins").on("click", function(event) {
+        console.log("clicked")
+        generateAllCoins();
+    })
+}
 
+function generateAllCoins() {
+    console.log("functioning")
+    const searchUrl = "https://min-api.cryptocompare.com/data/all/coinlist";
+    
+    return fetch(searchUrl)
+    .then(function (response) {
+        if (response.ok) return response.json();
+        throw new Error(response.statusText);
+    })
+    .then(function(responseJson) {
+        dataArray = [];
+        for (let key in responseJson.Data){
+            dataArray.push(responseJson.Data[key]);
+        }
+        console.log("made it to generateQ");
+        generateQuantity(dataArray);
+    })
+    .catch(error => console.log("generateAllCoins failed",error));
+}
 
+function generateQuantity(arr) {
+    let tableitems2 = "";
+    const baseImageUrl = "https://www.cryptocompare.com/";
+    
+    for (let i=0; i<10; i++) {
+        tableitems2 = tableitems2.concat(`
+        <li id="${arr[i].Name}"><img class="all-coins-image" src="${baseImageUrl}${arr[i].ImageUrl}"><a href="#">${arr[i].FullName}</a></li>
+        `);
+    }
 
-
+    $(".list-holder").html(`<div id="test-div"></div>`);
+    $("#test-div").html(tableitems2);
+}
 
 
 
@@ -354,6 +391,7 @@ function documentReady() {
     stickyNav();
     registerSearch();
     registerTopCoins();
+    registerAllCoins();
     
 }
 
