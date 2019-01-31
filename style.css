@@ -4,7 +4,8 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: 'Sarabun', sans-serif;
+    /* font-family: 'Sarabun', sans-serif; */
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -80,8 +81,9 @@ body {
     flex-direction: column;
 }
  .title-block h1 {
-     font-family: 'Open Sans', sans-serif;
-     text-align: center;
+     /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Sarabun', sans-serif;
+    text-align: center;
  }
 
  .title-block p {
@@ -169,7 +171,9 @@ img.description-image {
     float: right;
 }
 p {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Sarabun', sans-serif;
+
 
 }
 .description p {
