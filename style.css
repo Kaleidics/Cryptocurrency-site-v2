@@ -329,3 +329,15 @@ input {
 .all-coins-image {
     width: 50px;
 }
+
+#why-info-list li {
+    list-style-type: none;
+    margin-bottom: 40px;
+}
+#why-info-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
