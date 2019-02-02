@@ -11,7 +11,6 @@ function formatQueryParams(params) {
 function registerSearch() {
     $("#search-form").on("submit", function(event) {
         event.preventDefault();
-        // $(".graph-holder").append(`<canvas id="myChart"><canvas>`);
         let searchTerm = (($("#search-term").val()).toUpperCase()) || "BTC";
         let searchMarket = $("#search-ex").val() || "CCCAGG";
         let fCurrency = $("#search-xxx").val();
@@ -209,13 +208,13 @@ function generateQuantity(arr) {
 
 function giveInfoTicker() {
     $("#search-term").on("click", () => {
-        $(".change-info").hide().html("Type in the ticker symbol to search for. Example BTC for Bitcoin").fadeIn();
+        $(".change-info").hide().html("Type in the ticker symbol to search for. <br> Examples: BTC for Bitcoin, DOGE for Dogecoin").fadeIn();
     })
 }
 
 function giveInfoMarket() {
     $("#search-ex").on("click", () => {
-        $(".change-info").hide().html("Type in the market to search for. Example Kraken").fadeIn();
+        $(".change-info").hide().html("Type in the market to search for. <br> Examples: Coinbase, Kraken, Coinsbit.").fadeIn();
     })
 }
 
@@ -242,9 +241,9 @@ function guideNav() {
 }
 
 function statsNav() {
-    $("#stats-nav").on("click", () => {
+    $("#stats-nav, #search-submit").on("click", () => {
         $("html").animate({
-            scrollTop: $("#stats").offset().top
+            scrollTop: 2200
         },500)
     });
 }
