@@ -17,9 +17,9 @@
         <header role="banner">
             <ul id="navbar" class="no-scroll sticky"><a href="#"><img id="logo" src="./assets/logo.png"></a>
                 <li class="icon name"><a href="#">Simple Stats</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Guide</a></li>
-                <li><a href="#">About</a></li>
+                <li id="search-nav"><a href="#">Search</a></li>
+                <li id="guide-nav"><a href="#">Guide</a></li>
+                <li id="stats-nav"><a href="#">Stats</a></li>
             </ul>
         </header>
 
@@ -29,7 +29,7 @@
                     <h1>Get Some Simple Stats</h1>
                     <p>All the statistics for Cryptocurrencies can be confusing for beginners. <br> Search for a
                         Cryptocurrency. <br>Get the simple stats.</p>
-                    <div class="buttons"><button class="title-btn search">Search</button><button class="title-btn guidebtn">Learn
+                    <div class="buttons"><button id="search-now" class="title-btn search">Search</button><button id="learn-more" class="title-btn guidebtn">Learn
                             more</button></div>
                 </section>
             </div>
@@ -104,7 +104,7 @@
                 </div>
                 <div id="item2">
                     <h3>Info</h3>
-                    <p>Default search is Bitcoin with an aggregate of all markets in USD.</p>
+                    <p class="change-info">Default search is Bitcoin with an aggregate of all markets in USD.</p>
                 </div>
                 </div>
             </section>
@@ -120,7 +120,7 @@
                         </ul>
                     <div id="results-section">
                         <div class="graph-holder">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                            <canvas id="myChart"></canvas>
 
                         </div>
                         <div class="list-holder">

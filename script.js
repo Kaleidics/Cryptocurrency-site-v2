@@ -11,7 +11,7 @@ function formatQueryParams(params) {
 function registerSearch() {
     $("#search-form").on("submit", function(event) {
         event.preventDefault();
-
+        // $(".graph-holder").append(`<canvas id="myChart"><canvas>`);
         let searchTerm = (($("#search-term").val()).toUpperCase()) || "BTC";
         let searchMarket = $("#search-ex").val() || "CCCAGG";
         let fCurrency = $("#search-xxx").val();
@@ -207,9 +207,63 @@ function generateQuantity(arr) {
     $("#test-div").html(tableitems2);
 }
 
+function giveInfoTicker() {
+    $("#search-term").on("click", () => {
+        $(".change-info").hide().html("Type in the ticker symbol to search for. Example BTC for Bitcoin").fadeIn();
+    })
+}
 
+function giveInfoMarket() {
+    $("#search-ex").on("click", () => {
+        $(".change-info").hide().html("Type in the market to search for. Example Kraken").fadeIn();
+    })
+}
 
+function giveInfoCurrency() {
+    $("#search-xxx").on("click", () => {
+        $(".change-info").hide().html("Select the currency to exchange into.").fadeIn();
+    })
+}
 
+function searchNav() {
+    $("#search-nav, #search-now").on("click", () => {
+        $("html").animate({
+            scrollTop: 1500
+        },500)
+    });
+}
+
+function guideNav() {
+    $("#guide-nav").on("click", () => {
+        $("html").animate({
+            scrollTop: 1300
+        },500)
+    });
+}
+
+function statsNav() {
+    $("#stats-nav").on("click", () => {
+        $("html").animate({
+            scrollTop: $("#stats").offset().top
+        },500)
+    });
+}
+
+function logoNav() {
+    $("#logo, .icon").on("click", () => {
+        $("html").animate({
+            scrollTop: 0
+        },500)
+    });
+}
+
+function learnNav() {
+    $("#learn-more").on("click", () => {
+        $("html").animate({
+            scrollTop: 900
+        },500)
+    });
+}
 
 
 
@@ -394,7 +448,14 @@ function documentReady() {
     registerSearch();
     registerTopCoins();
     registerAllCoins();
-    
+    giveInfoMarket();
+    giveInfoTicker();
+    giveInfoCurrency();
+    searchNav();
+    guideNav();
+    statsNav();
+    logoNav();
+    learnNav();
 }
 
 $(documentReady);
