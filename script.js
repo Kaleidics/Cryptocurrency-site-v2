@@ -67,10 +67,17 @@ function generateResults(search, exchange, currency) {
             const { LASTMARKET, PRICE, OPEN24HOUR, HIGH24HOUR, LOW24HOUR, CHANGE24HOUR, CHANGEPCT24HOUR } = responseJSON.DISPLAY;
 
             if (PRICE === undefined) {
-                $(".list-holder").html(`<h3>No data found</h3>`);
+                $("#results-section").html(`<h3>No data found</h3>`);
             }
 
             if (PRICE != undefined) {
+                $("#results-section").html("");
+                $("#results-section").append(`
+                <div class="graph-holder">
+                            <canvas id="myChart"></canvas>
+
+                        </div>
+                        <div class="list-holder">`);
                 $(".list-holder").html(`
 
             <ul>
@@ -91,7 +98,7 @@ function generateResults(search, exchange, currency) {
             </ul>
             `)
             } else {
-                $(".list-holder").html(`<h2>No Data</h2>`)
+                $("#results-section").html(`<h2>No Data</h2>`)
             }
             return fetch(url3);
         })
@@ -159,8 +166,8 @@ function generateTopTen() {
             </ul>`);
             }
 
-            $(".list-holder").html("");
-            $(".list-holder").html(items);
+            // $("#results-section").html("");
+            $("#results-section").html(`<div>${items}</div>`);
         })
         .catch(error => console.log("generateTopTen failed", error));
 }
@@ -202,7 +209,7 @@ function generateQuantity(arr) {
         `);
     }
 
-    $(".list-holder").html(`<div id="test-div"></div>`);
+    $("#results-section").html(`<div id="test-div"></div>`);
     $("#test-div").html(tableitems2);
 }
 
@@ -289,8 +296,8 @@ function generateMarkets() {
             </ul>`);
             }
 
-            $(".list-holder").html("");
-            $(".list-holder").html(items);
+            // $("#results-section").html("");
+            $("#results-section").html(`<div>${items}</div>`);
 
             })
         .catch(error => console.log("generate markets failed", error));
