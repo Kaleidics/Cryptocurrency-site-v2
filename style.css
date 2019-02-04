@@ -348,3 +348,13 @@ input {
     flex-direction: column;
     text-align: center;
 }
+
+#test-div *{
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+
+#test-div li{
+    border: 1px solid #3C3B4F;
+}

@@ -264,8 +264,43 @@ function learnNav() {
     });
 }
 
+function generateMarkets() {
+    const searchUrl = "https://min-api.cryptocompare.com/data/exchanges/general";
+    const baseImageUrl = "https://www.cryptocompare.com/";
 
+    const url = `${searchUrl}?api_key=${api_key1}`;
+    console.log(url);
+    return fetch(url)
+        .then(function (response) {
+            if (response.ok) return response.json();
+            throw new Error(response.statusText);
+        })
+        .then(function (responseJson) {
+            let response = Object.keys(responseJson.Data);
+            let items = ``;
+            for (let i=1; i<10; i++) {
+                const {Name, LogoUrl} = responseJson.Data[response[i]];
+                console.log(Name, LogoUrl);
 
+            items = items.concat(`
+            <ul id="${Name}" class="top-coins-items">
+            <li><img class="list-images" src="${baseImageUrl}${LogoUrl}" alt="${Name}"></li>
+            <li><a href="#">${Name}</a></li>
+            </ul>`);
+            }
+
+            $(".list-holder").html("");
+            $(".list-holder").html(items);
+
+            })
+        .catch(error => console.log("generate markets failed", error));
+}
+
+function registerMarkets() {
+    $("#markets-list").on("click", function(event) {
+        generateMarkets();
+    });
+}
 
 
 
@@ -455,6 +490,8 @@ function documentReady() {
     statsNav();
     logoNav();
     learnNav();
+    generateTopTen();
+    registerMarkets();
 }
 
 $(documentReady);
