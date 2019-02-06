@@ -250,7 +250,7 @@ function guideNav() {
 function statsNav() {
     $("#stats-nav, #search-submit").on("click", () => {
         $("html").animate({
-            scrollTop: 2200
+            scrollTop: 1800
         },500)
     });
 }
