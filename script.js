@@ -234,7 +234,7 @@ function giveInfoCurrency() {
 function searchNav() {
     $("#search-nav, #search-now").on("click", () => {
         $("html").animate({
-            scrollTop: 1500
+            scrollTop: 1210
         },500)
     });
 }
