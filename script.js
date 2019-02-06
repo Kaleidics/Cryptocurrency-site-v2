@@ -309,11 +309,6 @@ function registerMarkets() {
     });
 }
 
-function sendTop() {
-    $(document).ready(function(){
-        $(this).scrollTop(0);
-    });
-}
 
 
 
@@ -505,7 +500,6 @@ function documentReady() {
     learnNav();
     generateTopTen();
     registerMarkets();
-    sendTop();
 }
 
 $(documentReady);
