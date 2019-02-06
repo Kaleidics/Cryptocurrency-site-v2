@@ -266,7 +266,7 @@ function logoNav() {
 function learnNav() {
     $("#learn-more").on("click", () => {
         $("html").animate({
-            scrollTop: 900
+            scrollTop: 800
         },500)
     });
 }

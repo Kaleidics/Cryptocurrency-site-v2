@@ -49,6 +49,8 @@ body {
     display: inline-block;
     list-style-type: none;
     padding: 14px;
+    border-bottom: 1px transparent;
+    transition: border-bottom 0.35s;
 }
 
 #navbar li a {
@@ -358,4 +360,13 @@ input {
 
 #test-div li{
     border: 1px solid #3C3B4F;
+}
+
+#navbar li:hover {
+    border-bottom: 1px solid rgb(232, 83, 87);
+    opacity: 1;
+}
+
+#why-use {
+    height: 400px;
 }
