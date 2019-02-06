@@ -49,8 +49,7 @@ body {
     display: inline-block;
     list-style-type: none;
     padding: 14px;
-    border-bottom: 1px transparent;
-    transition: border-bottom 0.35s;
+    
 }
 
 #navbar li a {
@@ -363,8 +362,8 @@ input {
 }
 
 #navbar li:hover {
-    border-bottom: 1px solid rgb(232, 83, 87);
-    opacity: 1;
+    border-bottom: 2px solid rgb(232, 83, 87);
+
 }
 
 #why-use {
