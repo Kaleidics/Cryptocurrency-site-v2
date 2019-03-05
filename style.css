@@ -11,7 +11,7 @@ html {
 body {
     background-color:#141326;
     margin: 0;
-    color: white;
+    color: #fefefe;
     min-height: 100%;
 }
 
@@ -59,7 +59,7 @@ body {
 
 #navbar li a {
     text-decoration: none;
-    color: white;
+    color: #fefefe;
 }
 
 #navbar li.icon.name {
@@ -112,7 +112,7 @@ body {
     margin: 20px;
     padding: 15px 20px;
     border-radius: 25px;
-    color: white;
+    color: #fefefe;
     min-width: 33%;
 }
 
@@ -328,7 +328,7 @@ input {
     padding: 0;
     text-align: center;
     border: 1px solid #3C3B4F;
-    color: white;
+    color: #fefefe;
 }
 
 .top-coins-items li {
@@ -345,7 +345,7 @@ input {
 }
 
 .top-coins-items li a {
-    color: white;
+    color: #fefefe;
     text-decoration: none;
 }
 
@@ -372,7 +372,7 @@ input {
 #test-div *{
     list-style-type: none;
     text-decoration: none;
-    color: white;
+    color: #fefefe;
 }
 
 #test-div li{
