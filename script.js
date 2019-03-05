@@ -234,7 +234,7 @@ function giveInfoCurrency() {
 function searchNav() {
     $("#search-nav, #search-now").on("click", () => {
         $("html").animate({
-            scrollTop: 1500
+            scrollTop: 1210
         },500)
     });
 }
@@ -250,7 +250,7 @@ function guideNav() {
 function statsNav() {
     $("#stats-nav, #search-submit").on("click", () => {
         $("html").animate({
-            scrollTop: 2200
+            scrollTop: 1800
         },500)
     });
 }
@@ -308,6 +308,7 @@ function registerMarkets() {
         generateMarkets();
     });
 }
+
 
 
 
@@ -480,7 +481,9 @@ function stickyNav() {
 }
 
 function toTop() {
-    window.scrollTo(0,0);
+    window.onbeforeunload = function () {
+        window.scrollTo(0,0);
+    };
 }
 
 function documentReady() {
