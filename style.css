@@ -46,7 +46,10 @@ body {
 .scroll {
     background-color: #141326;
 }
-
+.logo-holder {
+    margin: auto 0;
+    padding: 0;
+}
 #navbar li {
     display: inline-block;
     list-style-type: none;
@@ -69,6 +72,7 @@ body {
 
 #logo{
     max-width: 50px;
+    vertical-align: middle;
 }
 
 #particles {
@@ -375,7 +379,7 @@ input {
     border: 1px solid #3C3B4F;
 }
 
-#navbar li:hover {
+#navbar li:not(:first-of-type):hover {
     border-bottom: 2px solid rgb(232, 83, 87);
 
 }
