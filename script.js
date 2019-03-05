@@ -311,6 +311,23 @@ function registerMarkets() {
 
 
 
+function mobileNav() {
+    $('.content').on('click', (event) => {
+        $('.content').toggleClass('change');
+        $('#navbar li#search-nav, #navbar li#guide-nav, #navbar li#stats-nav').toggle();
+    });
+
+    $(window).on('resize', function () {
+        var width = $(window).width();
+        if (width > 1024) {
+            $('.mDelta').show();
+        }
+
+        // if (width < 1024 && !($('.content').hasClass('change'))) {
+        //     $('.mDelta').hide();
+        // }
+    });
+}
 
 
 
@@ -502,6 +519,7 @@ function documentReady() {
     learnNav();
     generateTopTen();
     registerMarkets();
+    mobileNav();
 }
 
 $(documentReady);

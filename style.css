@@ -379,7 +379,7 @@ input {
     border: 1px solid #3C3B4F;
 }
 
-#navbar li:not(:first-of-type):hover {
+.icon.name:hover, #search-nav:hover, #guide-nav:hover, #stats-nav:hover {
     border-bottom: 2px solid rgb(232, 83, 87);
 
 }
@@ -388,7 +388,47 @@ input {
     /* height: 400px; */
 }
 
+.content{
+    display: none;
+	cursor: pointer;
+}
+
+.icon1, .icon2, .icon3{
+	width: 30px;
+	height: 4px;
+	background: rgb(232, 83, 87);
+	margin: 6px 0;
+	transition: .5s
+}
+
+.change .icon1{
+	transform: rotate(-45deg) translate(-9px,5px);
+}
+
+.change .icon2{
+	opacity: 0
+}
+
+.change .icon3{
+	transform: rotate(45deg) translate(-9px,-5px);
+}
+
+.content {
+    /* display: none; */
+}
+
 @media(max-width: 800px) {
+
+    #navbar {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: #111;
+    }
+
+    .content {
+        display: block;
+    }
 
     .buttons {
         display: flex;
@@ -421,4 +461,30 @@ input {
         flex-direction: column;
         justify-content: center;
     }
+
+     #navbar li.icon.name {
+         padding: 2vw;
+         margin: 0;
+     }
+
+     #navbar li.logo-holder {
+        padding: 1vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+     }
+     #navbar li.mobileNav {
+        padding: 2vw;
+        position: fixed;
+        top: 0;
+        right: 0;
+     }
+
+     #navbar li#search-nav, #navbar li#guide-nav, #navbar li#stats-nav {
+         display: none;
+     }
+
+     /* .mobileShow {
+         display:;
+     } */
 }
