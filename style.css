@@ -240,8 +240,12 @@ p {
     min-width: 33%;
     background-color: rgb(232, 83, 87);
     border: 1px solid rgb(232, 83, 87);
+    cursor: pointer;
 }
-
+#search-submit:hover {
+    background: #141326;
+    border: 1px solid #fefefe;
+}
 #item1 {
     width: 40%;
     margin-left: 8%;

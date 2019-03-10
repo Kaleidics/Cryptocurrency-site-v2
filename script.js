@@ -234,7 +234,7 @@ function giveInfoCurrency() {
 function searchNav() {
     $("#search-nav, #search-now").on("click", () => {
         $("html").animate({
-            scrollTop: 1210
+            scrollTop: $('#search').offset().top - 55
         },500)
     });
 }
@@ -242,7 +242,7 @@ function searchNav() {
 function guideNav() {
     $("#guide-nav").on("click", () => {
         $("html").animate({
-            scrollTop: 1300
+            scrollTop: $('#guide').offset().top - 55
         },500)
     });
 }
@@ -250,7 +250,7 @@ function guideNav() {
 function statsNav() {
     $("#stats-nav, #search-submit").on("click", () => {
         $("html").animate({
-            scrollTop: 1800
+            scrollTop: $('#stats').offset().top - 55
         },500)
     });
 }
@@ -266,7 +266,7 @@ function logoNav() {
 function learnNav() {
     $("#learn-more").on("click", () => {
         $("html").animate({
-            scrollTop: 800
+            scrollTop: $('#why-use').offset().top - 55
         },500)
     });
 }
