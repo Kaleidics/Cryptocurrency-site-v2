@@ -481,7 +481,7 @@ input {
 
     #search-section {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
     }
 
@@ -508,14 +508,14 @@ input {
      }
 
      #item1 {
-         align-items: center;
+        align-items: center;
         width: 100%;
         margin: 0;
+        margin-top: 5vh;
      }
      #item2 {
         width: 100%;
         text-align: center;
-        margin-top: 10vh;
      }
      #search-form {
          justify-content: center;
