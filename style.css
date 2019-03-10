@@ -314,6 +314,15 @@ input {
     margin-right: 50px;
 }
 
+#results-ul li {
+    color: #fefefe;
+    border-bottom: 2px solid transparent;
+}
+
+#results-ul li:hover {
+    border-bottom: 2px solid rgb(232, 83, 87);
+}
+
 #results-section {
     /* height: 100%; */
     /* padding-left:10%; */
@@ -506,6 +515,23 @@ input {
      }
      #search-form {
          justify-content: center;
+     }
+
+     #results-ul {
+         justify-content: space-evenly;
+     }
+     #top-coins, #all-coins, #markets-list, #search-results {
+         margin:0;
+     }
+
+     #results-section {
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+     }
+     .graph-holder {
+         width: 100%;
+         height: 50%;
      }
      /* .mobileShow {
          display:;
