@@ -307,16 +307,17 @@ input {
 
 #results-ul {
     display: flex;
-    justify-content: center;
-    margin: 0;
+    justify-content: space-between;
+    margin: 0 auto;
     padding: 0;
     list-style-type: none;
     margin-bottom: 80px;
+    width: 20%;
 }
 
-#results-ul * {
+/* #results-ul * {
     margin-right: 50px;
-}
+} */
 
 #results-ul li {
     color: #fefefe;
@@ -523,6 +524,7 @@ input {
 
      #results-ul {
          justify-content: space-evenly;
+         width: 100%;
      }
      #top-coins, #all-coins, #markets-list, #search-results {
          margin:0;
